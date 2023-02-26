@@ -1,0 +1,19 @@
+Miglioriamo EpiBooks!
+
+Riparti dal progetto precedente, oggi aggiungeremo le seguenti nuove funzionalità.
+
+Sposta il campo di ricerca in un componente navbar posto in cima, dovrà sempre essere utilizzato per filtrare i libri della lista all’interno di BookList; per farlo, dovrai elevare lo stato fino ad App.
+Ecco le istruzioni passo-passo per arrivare al risultato:
+
+Converti App in un componente classe, e crea al suo interno un oggetto di stato con una proprietà testuale ‘query’.
+Crea un componente MyNavbar, prendendo ad esempio la navbar di react-bootstrap. Aggiungi al suo interno un campo testuale, e inserisci “Cerca” come placeholder.
+Renderizza il componente MyNavbar all’interno di App, il più in alto possibile, e forniscigli delle prop per leggere il valore di ‘query’ dallo stato di App e un metodo in grado di cambiare il valore di ‘query’. Queste due prop saranno collegate all’input testuale di ricerca dentro MyNavbar, rendendolo quindi un campo di testo controllato.
+Ora dovresti essere in grado, dal componente MyNavbar, di leggere e scrivere il valore di query nello stato di App. Passa infine il valore di query dallo stato di App anche al componente BookList, con una prop; in questo modo la lista dei risultati può essere filtrata utilizzando tale valore.
+
+La prossima nuova funzionalità sarà permettere all’applicazione di avere solo UN libro selezionato all volta; cliccando su una copertina diversa, il libro precedente deve de-selezionarsi, e il nuovo libro selezionato deve aggiornare la lista dei commenti.
+Questo richiederà di elevare la proprietà ‘selected’, dallo stato di SingleBook, allo stato di BookList, e il suo valore non sarà più true/false ma conterrà l’ASIN del libro attualmente selezionato. Per raggiungere questa funzionalità puoi seguire la strategia che hai appena messo in atto per il task precedente.
+
+EXTRA
+
+Utilizza React.Context per condividere con l’intera applicazione una proprietà ‘theme’: il suo valore può essere light o dark, e deve influenzare qualche proprietà visiva dei componenti principali (MyNavbar, BookList, SingleBook etc.).
+Fornisci anche un modo per cambiare valore alla proprietà ‘theme’ (da light a dark e viceversa) e verifica che l’applicazione riceva il nuovo valore alla modifica dello stesso.
